@@ -1,0 +1,9 @@
+{
+    "host" : "13.209.218.231",
+    "port" :"3306",
+    "user" : "retailtf",
+    "passwd" : "mar03mar)#",
+    "db": "RETAILTECH",
+    "charset" : "utf8"
+}
+

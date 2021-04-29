@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="static/img/favicon.ico">
+    
+    <link rel="apple-touch-icon" sizes="144x144" href="static/img/ico/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/img/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/img/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" href="static/img/ico/apple-touch-icon-57x57.png">
+
+    <title>Price Tag#</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins.css') }}">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.1.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pe-icons.css') }}">
+</head>
+
+<body id="page-top" class="regular-navigation">
+    <div class="master-wrapper">
+        <div class="preloader">
+            <div class="preloader-img">
+            	<span class="loading-animation animate-flicker"><img src="static/img/loading.GIF" alt="loading" /></span>
+            </div>
+        </div>
+        <!--top-Header-menu-->
+        {% include "include/menu.html" %}
+        <section id="about" class="">
+            <div class="col-lg-12">
+                <div class="grid">
+                  <p class="grid-header" style="font-weight: 900">Completed Charges</p>
+                  <div class="item-wrapper">
+                    <div class="table-responsive" style="border :0px">
+                      <table class="table">
+                        <tbody>
+                          {% for item in items %}
+                          <tr onclick="receipt_detail('{{item[0]}}');">
+                            <td>{{item[3]}},{{item[4]}} {{item[5]}}</a></td>
+                            <td style="text-align: right">
+                              <label class="badge badge-darkcyan">{{item[2]}} item</label>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="static/img/bg/bg10.jpg" data-speed="0.8">
+          <div class="section-inner">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-12 text-center mb100">
+                          <h2 class="section-heading">JUST <span class="theme-accent-color">WALK</span> OUT</h2>
+                          <hr class="thin-hr">
+                          <h3 class="section-subheading secondary-font">NO LINES. NO CHECKOUT.</h3>
+                          <h3 class="section-subheading secondary-font" style="padding-top:0px">(NO, SERIOUSLY.)</h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                              <li>
+                                  <div class="row">
+                                      <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                          <div class="col-sm-2">
+                                              <img src="static/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                          </div>
+                                          <div class="col-sm-10">                                                
+                                              <h4>요괴라면 봉골레맛</h4>
+                                              <p>쓰린 속을 부여잡고 당황하는 당신, 시원한 조개 국물 필요하지 않으세요? 지금이라도 당장 해장이 필요한 당신에게 필요한 건 바로 이 것!</p>
+                                              <ul class="list-inline">
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="row">
+                                      <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                          <div class="col-sm-2">
+                                              <img src="static/img/team/small2.jpg" class="img-responsive testimonial-author" alt="">
+                                          </div>
+                                          <div class="col-sm-10">                                                
+                                              <h4>커피맛 달고나</h4>
+                                              <p>옥토끼 프로젝트가 아니면 우주 어디서도 구할 수 없는 커피맛 달고나입니다. 일상에 지친 그대의 행복지수를 높여줄 달괴를 맛보세요!</p>
+                                              <ul class="list-inline">
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="row">
+                                      <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                          <div class="col-sm-2">
+                                              <img src="static/img/team/small4.jpg" class="img-responsive testimonial-author" alt="">
+                                          </div>
+                                          <div class="col-sm-10">                                                
+                                              <h4>우주토피</h4>
+                                              <p>달달한 미국식 달고나와 고소한 프랑스 프로랑탱의 우주적만남</p>
+                                              <ul class="list-inline">
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                  <li><i class="fa fa-star theme-accent-color"></i></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+        <!--footer-->
+        {% include "include/footer.html" %}
+
+        <div id="bottom-frame"></div>
+
+        <a href="#" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+    </div>
+    <form action="/receipt_detail"  name ="go" id ="go" method="POST" enctype="multipart/form-data">
+    <input type="hidden" id = "token_no" name = "token_no">
+    </form>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+    <script type="text/javascript">
+      function receipt_detail(token_no)
+      {
+        document.getElementById("token_no").value = token_no;
+        document.forms["go"].submit();
+      }
+    </script>        
+</body>
+
+</html>

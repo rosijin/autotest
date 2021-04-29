@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="static/img/favicon.ico">
+    
+    <link rel="apple-touch-icon" sizes="144x144" href="static/img/ico/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/img/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/img/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" href="static/img/ico/apple-touch-icon-57x57.png">
+    
+    <title>Price Tag#</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins.css') }}">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.1.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pe-icons.css') }}">
+</head>
+
+<body id="page-top" class="regular-navigation">
+    <div class="master-wrapper">
+        <div class="preloader">
+            <div class="preloader-img">
+            	<span class="loading-animation animate-flicker"><img src="static/img/loading.GIF" alt="loading" /></span>
+            </div>
+        </div>
+        <!--top-Header-menu-->
+        {% include "include/menu.html" %}
+        <section id="the-menu">
+                <div class="section-inner">
+    
+                     <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center mb100">
+                                <h2 class="section-heading"><span class="theme-accent-color">products</span></h2>
+                                <hr class="thin-hr">
+                                <h3 class="section-subheading secondary-font">update</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+
+                        <div class="row mb100">
+                            <div class="col-md-4 wow fadeIn">
+                                <h2 class="mb50"><span class="heading-font text-uppercase">GOING MARY</span></h2>
+                                <h3>product <span class="theme-accent-color">1,000원</span></h3>
+                                <p> 상품 소개</p>
+                                <h3>product <span class="theme-accent-color">2,000원</span></h3>
+                                <p>상품 소개</p>
+                                <h3>product <span class="theme-accent-color">3,000원</span></h3>
+                                <p>상품 소개</p>
+                            </div>
+                    </div>                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 wow fadeIn">
+                                <h2 class="mb50"><span class="heading-font text-uppercase">Price tag#</span></h2>
+                                {% for item in items %}
+                                <div class="food-menu-item">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <img src="http://54.180.36.18:7000/static/download/product/{{item[1]}}" class="img-responsive">
+                                        </div>
+                                        <div class="col-xs-9">
+                                            <h3>{{item[0]}} <span class="theme-accent-color">{{item[2]}} 원</span></h3>
+                                            <p>상품소개</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}           
+                            </div>
+    
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        
+        <!--footer-->
+        {% include "include/footer.html" %}
+        <div id="bottom-frame"></div>
+
+        <a href="#" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+          
+</body>
+
+</html>
